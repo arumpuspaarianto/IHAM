@@ -19,19 +19,19 @@
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID</label>
+                                    <label class="text-label">RFID UID</label>
                                     <input type="text" name="uid_aset" class="form-control" required>
                                 </div>
                             </div>
 							<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Nama Aset</label>
+                                    <label class="text-label">NAMA ASET</label>
                                     <input type="text" name="nama_aset" class="form-control" required>
                                 </div>
                             </div>
 							<div class="col-lg-12 mb-2">
                                 <div class="form-group ">
-                                    <label class="text-label">Kategori</label>
+                                    <label class="text-label">KATEGORI</label>
                                     <select class="form-control" name="kategoriaset">
                                         <option>Pilih Kategori</option>
 										<?php 
@@ -56,7 +56,7 @@
                             </div>
 							<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Lokasi Penyimpanan Aset</label>
+                                    <label class="text-label">LOKASI PENYIMPANAN ASET</label>
                                     <input type="text" name="penyimpanan_aset" class="form-control" required>
                                 </div>
                             </div>
@@ -88,31 +88,31 @@
                         <div class="row">
 							<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Nama Barang</label>
+                                    <label class="text-label">NAMA BARANG</label>
                                     <input type="text" name="nama_aset" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Merk</label>
+                                    <label class="text-label">MERK</label>
                                     <input type="text" name="nama_aset" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Tipe</label>
+                                    <label class="text-label">TIPE</label>
                                     <input type="text" name="nama_aset" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Tujuan Pembelian</label>
+                                    <label class="text-label">TUJUAN PEMBELIAN</label>
                                     <input type="text" name="nama_aset" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">Penanggungjawab</label>
+                                    <label class="text-label">PENANGGUNGJAWAB</label>
                                     <input type="text" name="nama_aset" class="form-control" required>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">peminjaman Aset</h3>
+                <h3 class="modal-title">Peminjaman Aset</h3>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                 </button>
             </div>
@@ -186,7 +186,7 @@
                         <div class="row">
                         	<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID Penanggungjawab</label>
+                                    <label class="text-label">UID PENANGGUNGJAWAB</label>
                                     <input type="text" name="uid_penanggungjawab" id="uid_penanggungjawab" class="form-control" onBlur="getUser()" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
@@ -195,7 +195,7 @@
                             </div>
 							<div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-label">UID Asset</label>
+                                    <label class="text-label">RFID UID</label>
                                     <input type="text" name="uid_pinjamaset" id="uid_pinjamaset" class="form-control" onBlur="getAsset()" required>
                                 </div>
                                 <div class="form-group">
@@ -301,7 +301,7 @@
                             		<i class="fas fa-procedures"></i>
                         		</span> -->
                         		<div class="media-body text-white">
-                            		<p class="mb-1">peminjaman Aset</p>
+                            		<p class="mb-1">Peminjaman Aset</p>
                             		<!-- <h4 class="mb-0">250</h4> -->
                             <!-- <span class="badge badge-warning">+250</span> -->
                         		</div>
@@ -342,12 +342,12 @@
                         <table id="example5" class="display" style="min-width: 100px">
                             <thead>
                                 <tr>
-                                	<th>No</th>    
-									<th>TAG ID</th>
-                                    <th>Nama Alat</th>
-									<th>Kategori</th>
-                                    <th>Lokasi</th>
-									<th>Action</th>
+                                	<th>NO</th>    
+									<th>RFID UID</th>
+                                    <th>NAMA ALAT</th>
+									<th>KATEGORI</th>
+                                    <th>LOKASI</th>
+									<th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -395,10 +395,10 @@
                         <table id="example5" class="display" style="min-width: 100px">
                             <thead>
                                 <tr>
-									<th>No</th>
-                                    <th>Kategori</th>
-                                    <th>Update Terakhir</th>
-									<th>Action</th>
+									<th>NO</th>
+                                    <th>KATEGORI</th>
+                                    <th>STATUS TERAKHIR</th>
+									<th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -441,14 +441,14 @@
                         <table id="example5" class="display" style="min-width: 100px">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>TAG ID</th>
-                                    <th>Nama Alat</th>
-									<th>Kategori</th>
-                                    <th>Penanggungjawab</th>
-                                    <th>Tanggal peminjaman</th>
-                                    <th>Tanggal Kembali</th>
-                                    <th>Action</th>
+                                    <th>NO</th>
+                                    <th>RFID UID</th>
+                                    <th>NAMA ALAT</th>
+									<th>KATEGORI</th>
+                                    <th>PENANGGUNGJAWAB</th>
+                                    <th>TANGGAL PEMINJAMAN</th>
+                                    <th>TANGGAL KEMBALI</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>

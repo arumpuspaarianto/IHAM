@@ -12,17 +12,17 @@
                 <form action="addclinicalpasien.php" method="post">
                     <div class="form-group">
                         <div class="col-lg-15">
-                            <label> Tag ID </label>
+                            <label> RFID UID </label>
                             <Input type="text" name="tag_id" class="form-control input-default">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label> Tanggal Masuk </label>
+                        <label> TANGGAL MASUK </label>
                         <Input type="text" name="tanggal_masuk" class="form-control input-default">
                     </div>
                     <div class="form-group ">
                         <div class="col-lg-15">
-                            <label class="text-label">Jenis Pasien</label>
+                            <label class="text-label">KATEGORI PASIEN</label>
                             <select class="form-control" name="jenis_pasien">
                                 <option>Pilih Jenis Pasien</option>
                                 <option>Dewasa</option>
@@ -31,33 +31,95 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label> Nama Pasien </label>
+                        <label> NAMA PASIEN </label>
                         <Input type="text" name="nama_pasien" class="form-control input-default">
                     </div>
                     <div class="form-group">
-                        <label> Dokter </label>
+                        <label> DOKTER </label>
                         <Input type="text" name="dokter" class="form-control input-default">
                     </div>
                     <div class="form-group">
-                        <label> Diagnosa </label>
+                        <label> DIAGNOSA </label>
                         <Input type="text" name="diagnosa" class="form-control input-default">
                     </div>
                     <div class="form-group">
-                        <label> Status </label>
+                        <label> STATUS </label>
                         <Input type="text" name="status" class="form-control input-default">
                     </div>
                     <div class="form-group">
-                        <label> Asal Ruang </label>
+                        <label> ASAL RUANG </label>
                         <Input type="text" name="asal_ruang" class="form-control input-default">
                     </div>
                     <div class="form-group">
-                        <label> Ruang Pemindahan</label>
+                        <label> RUANG PEMINDAHAN</label>
                         <Input type="text" name="ruang_pemindahan" class="form-control input-default">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="submit" value="insertclinicalpasien" class="btn btn-primary" name="input">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-reservasi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form Reservasi Kamar</h5>
+                <i class="fas fa-times"data-bs-dismiss="modal" aria-label="Close"></i>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <div class="col-lg-15">
+                            <label> RFID UID </label>
+                            <Input type="text" name="tag_id" class="form-control input-default">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> TANGGAL MASUK </label>
+                        <Input type="text" name="tanggal_masuk" class="form-control input-default">
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-lg-15">
+                            <label class="text-label">KATEGORI PASIEN</label>
+                            <select class="form-control" name="jenis_pasien">
+                                <option>Pilih Kategori Pasien</option>
+                                <option>Dewasa</option>
+                                <option>Anak</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> NAMA PASIEN </label>
+                        <Input type="text" name="nama_pasien" class="form-control input-default">
+                    </div>
+                    <div class="form-group">
+                        <label> DOKTER </label>
+                        <Input type="text" name="dokter" class="form-control input-default">
+                    </div>
+                    <div class="form-group">
+                        <label> DIAGNOSA </label>
+                        <Input type="text" name="diagnosa" class="form-control input-default">
+                    </div>
+                    <div class="form-group">
+                        <label> STATUS </label>
+                        <Input type="text" name="status" class="form-control input-default">
+                    </div>
+                    <div class="form-group">
+                        <label> ASAL RUANG </label>
+                        <Input type="text" name="asal_ruang" class="form-control input-default">
+                    </div>
+                    <div class="form-group">
+                        <label> RUANG PEMINDAHAN</label>
+                        <Input type="text" name="ruang_pemindahan" class="form-control input-default">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
                 <button type="submit" value="insertclinicalpasien" class="btn btn-primary" name="input">Simpan</button>
             </div>
         </div>
@@ -137,7 +199,7 @@
         <div class="col-xl-3 col-lg-6 col-sm-6">
 			<div class="row">
 				<div class="widget-stat card bg-success mr-4 mb-2" style="width: 100%">
-					<a href="" data-toggle="modal" data-target=".modal-pindah-aset">
+					<a href="" data-toggle="modal" data-target="#modal-reservasi">
 						<div class="card-body p-3">
                     		<div class="media ai-icon">
                        			<!-- <span class="mr-3 bgl-warning text-info">
@@ -172,184 +234,6 @@
 				</div>
 			</div>
 		</div>
-        <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
-            <div class="card" id="log-data-pasien">
-            <div class="card-header">
-                <h4 class="card-title">Log Data Pasien</h4>
-            </div>
-            <div class="card-body">
-                <div class="default-tab">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#home"><i class="la la-baby mr-2"></i> Bayi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#profile"><i class="la la-child mr-2"></i> Anak-Anak</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#contact"><i class="la la-user mr-2"></i> Dewasa</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel">
-                            <div class="pt-4">
-                                <div class="table-responsive">
-                                    <table id="example5" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>Tanggal Masuk</th>
-                                                <th>UID</th>
-                                                <th>Nama Pasien</th>
-                                                <th>Tanggal Lahir</th>
-                                                <th>Alamat</th>
-                                                <th>Diagnosa</th>
-                                                <th>Dokter Penanggungjawab</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php 
-								                $sql = "SELECT*FROM tb_pasien WHERE kategori_pasien='Bayi'";
-								                $query = $dbh -> prepare($sql);
-								                $query->execute();
-								                $results=$query->fetchAll(PDO::FETCH_OBJ);
-								                $cnt=1;
-								                if($query->rowCount() > 0)
-								                {
-									                foreach($results as $result)
-									            {               
-						                    ?>  
-                                            <tr>
-                                                <td><?php echo htmlentities($result->tanggal_masuk);?></td>                            
-                                                <td><?php echo htmlentities($result->kode_rfid);?></td>                            
-                                                <td><?php echo htmlentities($result->nama);?></td>                            
-                                                <td><?php echo htmlentities($result->tanggal_lahir);?></td> 
-                                                <td><?php echo htmlentities($result->alamat);?></td>         
-                                                <td><?php echo htmlentities($result->diagnosa);?></td>
-                                                <td><?php echo htmlentities($result->dokter_penanggungjawab);?></td> 
-                                                <td><?php echo htmlentities($result->status_pasien);?></td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditpasien" ><i class="fa fa-pencil" ></i></a>
-											            <a href="deletePasien.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-									                </div>
-                                                </td>                               
-                                                <?php
-                                                    }}
-                                                ?>												
-                                            </tr>                    
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="tab-pane fade" id="profile">
-                        <div class="pt-4">
-                        <div class="table-responsive">
-                                <table id="example5" class="display" style="min-width: 845px">
-                                    <thead>
-                                        <tr>
-                                            <th>Tanggal Masuk</th>
-                                            <th>UID</th>
-                                            <th>Nama Pasien</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Alamat</th>
-                                            <th>Diagnosa</th>
-                                            <th>Dokter Penanggungjawab</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php 
-								                $sql = "SELECT*FROM tb_pasien WHERE kategori_pasien='Anak'";
-								                $query = $dbh -> prepare($sql);
-								                $query->execute();
-								                $results=$query->fetchAll(PDO::FETCH_OBJ);
-								                $cnt=1;
-								                if($query->rowCount() > 0)
-								                {
-									                foreach($results as $result)
-									            {               
-						                    ?>  
-                                            <tr>
-                                                <td><?php echo htmlentities($result->tanggal_masuk);?></td>                            
-                                                <td><?php echo htmlentities($result->kode_rfid);?></td>                            
-                                                <td><?php echo htmlentities($result->nama);?></td>                            
-                                                <td><?php echo htmlentities($result->tanggal_lahir);?></td> 
-                                                <td><?php echo htmlentities($result->alamat);?></td>         
-                                                <td><?php echo htmlentities($result->diagnosa);?></td>
-                                                <td><?php echo htmlentities($result->dokter_penanggungjawab);?></td> 
-                                                <td><?php echo htmlentities($result->status_pasien);?></td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditpasien" ><i class="fa fa-pencil" ></i></a>
-											            <a href="deletePasien.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-									                </div>
-                                                </td>                               
-                                                <?php
-                                                    }}
-                                                ?>												
-                                            </tr>                        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="contact">
-                        <div class="pt-4">
-                        <div class="table-responsive">
-                                <table id="example5" class="display" style="min-width: 845px">
-                                    <thead>
-                                        <tr>
-                                            <th>Tanggal Masuk</th>
-                                            <th>UID</th>
-                                            <th>Nama Pasien</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Alamat</th>
-                                            <th>Diagnosa</th>
-                                            <th>Dokter Penanggungjawab</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php 
-								                $sql = "SELECT*FROM tb_pasien WHERE kategori_pasien='Dewasa'";
-								                $query = $dbh -> prepare($sql);
-								                $query->execute();
-								                $results=$query->fetchAll(PDO::FETCH_OBJ);
-								                $cnt=1;
-								                if($query->rowCount() > 0)
-								                {
-									                foreach($results as $result)
-									            {               
-						                    ?>  
-                                            <tr>
-                                                <td><?php echo htmlentities($result->tanggal_masuk);?></td>                            
-                                                <td><?php echo htmlentities($result->kode_rfid);?></td>                            
-                                                <td><?php echo htmlentities($result->nama);?></td>                            
-                                                <td><?php echo htmlentities($result->tanggal_lahir);?></td> 
-                                                <td><?php echo htmlentities($result->alamat);?></td>         
-                                                <td><?php echo htmlentities($result->diagnosa);?></td>
-                                                <td><?php echo htmlentities($result->dokter_penanggungjawab);?></td> 
-                                                <td><?php echo htmlentities($result->status_pasien);?></td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a href="#" id="<?php echo htmlentities ($result->id); ?>" class="btn btn-primary shadow btn-xs sharp mr-1 openmodaleditpasien" ><i class="fa fa-pencil" ></i></a>
-											            <a href="deletePasien.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger shadow btn-xs sharp" ><i class="fa fa-trash"></i></a>
-									                </div>
-                                                </td>                               
-                                                <?php
-                                                    }}
-                                                ?>												
-                                            </tr>                        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     </div>
         <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
@@ -363,16 +247,15 @@
                                         <thead>
                                             <tr>
                                                 <th style="width:80px;" ><strong>No</strong></th>
-                                                <th><strong>Kode RFID</strong></th>
-                                                <th><strong>Tanggal Masuk</strong></th>
-                                                <th><strong>Nama Pasien</strong></th>
-                                                <th><strong>Jenis Pasien</strong></th>
-                                                <th><strong>Dokter</strong></th>
-                                                <th><strong>Diagnosa</strong></th>
-                                                
-                                                <th><strong>Asal Ruang</strong></th>
-                                                <th><strong>Ruang Pemindahan</strong></th>
-                                                <th><strong>Action</strong></th>
+                                                <th><strong>RFID UID</strong></th>
+                                                <th><strong>TANGGAL MASUK</strong></th>
+                                                <th><strong>NAMA PASIEN</strong></th>
+                                                <th><strong>KATEGORI PASIEN</strong></th>
+                                                <th><strong>DOKTER</strong></th>
+                                                <th><strong>DIAGNOSA</strong></th>
+                                                <th><strong>ASAL RUANG</strong></th>
+                                                <th><strong>RUANG PEMINDAHAN</strong></th>
+                                                <th><strong>ACTION</strong></th>
                                                 <th></th>  
                                             </tr>
                                         </thead>
@@ -391,14 +274,12 @@
 
                                             <tr>
                                                 <td><?php echo $cnt;?></td>
-
                                                 <td><?php echo htmlentities($result->tag_id);?></td>
                                                 <td><?php echo htmlentities($result->tanggal_masuk);?></td>
                                                 <td><?php echo htmlentities($result->nama_pasien);?></td>
                                                 <td><?php echo htmlentities($result->jenis_pasien);?></td>
                                                 <td><?php echo htmlentities($result->dokter);?></td>
                                                 <td><?php echo htmlentities($result->diagnosa);?></td>
-                                                
                                                 <td><?php echo htmlentities($result->asal_ruang);?></td>
                                                 <td><?php echo htmlentities($result->ruang_pemindahan);?></td>
                                                 
