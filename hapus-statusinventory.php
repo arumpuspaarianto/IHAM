@@ -1,7 +1,7 @@
 <?php
 require_once 'connect.php';
 	$id = $_GET['id'];
-	$sql = "DELETE FROM `tb_rfid` WHERE id= ?";
+	$sql = "DELETE FROM `view_peminjaman` WHERE id= ?";
 	$row = $dbh->prepare($sql);
 	$row->execute(array($id));
 	

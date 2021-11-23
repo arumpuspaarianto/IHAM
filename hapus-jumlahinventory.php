@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 	$id = $_GET['id'];
-	$sql = "DELETE FROM `tb_jumlah_inventory` WHERE id= ?";
+	$sql = "DELETE FROM `jumlah_inventory` WHERE id= ?";
 	$row = $dbh->prepare($sql);
 	$row->execute(array($id));
 	

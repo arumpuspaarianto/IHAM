@@ -1,26 +1,26 @@
 <?php  
    require_once('connect.php');
-
+	
    	 
-   	if(!empty($_POST['KODE_RFID'])){
-   		$KODE_RFID = $_POST['KODE_RFID'];
-   		$NAMA_BARANG = $_POST['NAMA_BARANG'];
-   		$LOKASI_PENYIMPANAN = $_POST['LOKASI_PENYIMPANAN'];
-   		$TERPAKAI = $_POST['TERPAKAI'];
-   		$TERSEDIA = $_POST['TERSEDIA'];
-   		$KETERANGAN = $_POST['KETERANGAN'];
-   		$id = $_POST['ID'];
+   	if(!empty($_POST['kode_rfid'])){
+   		$kode_rfid = $_POST['kode_rfid'];
+   		$nama_aset = $_POST['nama_aset'];
+   		$jumlah = $_POST['jumlah'];
+   		$tempat = $_POST['tempat'];
+   		$terpakai = $_POST['terpakai'];
+   		$tersedia = $_POST['tersedia'];
+   		$id = $_POST['id'];
 		
-   		$data[] = $KODE_RFID;
-   		$data[] = $NAMA_BARANG;
-   		$data[] = $LOKASI_PENYIMPANAN;
-   		$data[] = $TERPAKAI;
-   		$data[] = $TERSEDIA;
-   		$data[] = $KETERANGAN;
+   		$data[] = $kode_rfid;
+   		$data[] = $nama_aset;
+   		$data[] = $jumlah;
+   		$data[] = $tempat;
+   		$data[] = $terpakai;
+   		$data[] = $tersedia;
    		$data[] = $id;
 	
 		
-   		$sql = "UPDATE `tb_jumlah_inventory` SET KODE_RFID=?,NAMA_BARANG=?,LOKASI_PENYIMPANAN=?,TERPAKAI=?,TERSEDIA=?,KETERANGAN=? WHERE id=?";
+   		$sql = "UPDATE `jumlah_inventory` SET kode_rfid=?,nama_aset=?,jumlah=?,tempat=?,terpakai=?,tersedia=? WHERE id=?";
    		$row = $dbh->prepare($sql);
    		$row->execute($data);
 		
@@ -28,7 +28,7 @@
 	   }
    
    	$id = $_GET['id'];
-   	$sql = "SELECT *FROM `tb_jumlah_inventory` WHERE ID= ?";
+   	$sql = "SELECT *FROM `jumlah_inventory` WHERE id= ?";
    	$row = $dbh->prepare($sql);
    	$row->execute(array($id));
    	$result = $row->fetch();
@@ -36,43 +36,43 @@
    <!DOCTYPE HTML>
    <html>
    	<head>
-   		<title>Edit - <?php echo $result['KODE_RFID'];?></title>
+   		<title>Edit - <?php echo $result['kode_rfid'];?></title>
    		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
    		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    	</head>
    	<body>
    		<div class="container">
    			 <br/>
-   			 <h3>Edit - <?php echo $result['KODE_RFID'];?></h3>
+   			 <h3>Edit - <?php echo $result['kode_rfid'];?></h3>
    			 <br/>
    			<div class="row">
    				 <div class="col-lg-6">
    					 <form action="" method="POST">
    						 <div class="form-group">
-   							 <label>KODE RFID</label>
-   							 <input type="text" value="<?php echo $result['KODE_RFID'];?>" class="form-control" name="KODE_RFID">
+   							 <label>RFID UID</label>
+   							 <input type="text" value="<?php echo $result['kode_rfid'];?>" class="form-control" name="kode_rfid">
    						 </div>
    						 <div class="form-group">
-   							 <label>NAMA BARANG</label>
-   							 <input type="text" value="<?php echo $result['NAMA_BARANG'];?>" class="form-control" name="NAMA_BARANG">
+   							 <label>NAMA ALAT</label>
+   							 <input type="text" value="<?php echo $result['nama_aset'];?>" class="form-control" name="nama_aset">
    						 </div>
    						 <div class="form-group">
-   							 <label>LOKASI PENYIMPANAN</label>
-   							 <input type="text" value="<?php echo $result['LOKASI_PENYIMPANAN'];?>" class="form-control" name="LOKASI_PENYIMPANAN">
+   							 <label>JUMLAH</label>
+   							 <input type="text" value="<?php echo $result['jumlah'];?>" class="form-control" name="jumlah">
+   						 </div>
+   						 <div class="form-group">
+   							 <label>TEMPAT</label>
+   							 <input type="text" value="<?php echo $result['tempat'];?>" class="form-control" name="tempat">
    						 </div>
    						 <div class="form-group">
    							 <label>TERPAKAI</label>
-   							 <input type="text" value="<?php echo $result['TERPAKAI'];?>" class="form-control" name="TERPAKAI">
+   							 <input type="text" value="<?php echo $result['terpakai'];?>" class="form-control" name="terpakai">
    						 </div>
    						 <div class="form-group">
    							 <label>TERSEDIA</label>
-   							 <input type="text" value="<?php echo $result['TERSEDIA'];?>" class="form-control" name="TERSEDIA">
+   							 <input type="text" value="<?php echo $result['tersedia'];?>" class="form-control" name="tersedia">
    						 </div>
-   						 <div class="form-group">
-   							 <label>KETERANGAN</label>
-   							 <input type="text" value="<?php echo $result['KETERANGAN'];?>" class="form-control" name="KETERANGAN">
-   						 </div>
-   						 <input type="hidden" value="<?php echo $result['ID'];?>" name="ID">
+   						 <input type="hidden" value="<?php echo $result['id'];?>" name="id">
    						 <button class="btn btn-primary btn-md" name="create"><i class="fa fa-edit"> </i> Update</button>
    					 </form>
    				  </div>
